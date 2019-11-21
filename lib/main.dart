@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
         title: Text('My App'),
       ),
 
+//this is for new feature
 body: ProdcutManager(),
       ),
 
