@@ -54,7 +54,9 @@ Container(
 
 
         
-       Products(_products)
+       Expanded(
+      
+         child :Products(_products))
 
     ],); 
   }

@@ -6,22 +6,24 @@
    final List<String> products;
    Products(this.products);
 
-     @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return Column(
-            children: products
-                .map(
-                  (element) => Card(
+
+Widget  _buildProductItem(BuildContext context,int index){
+        return Card(
                     child: Column(
                       children: <Widget>[
                         Image.asset('assets/img.jpg'),
-                        Text(element)
+                        Text(products[index])
                       ],
                     ),
-                  ),
-                )
-                .toList(),
+                  );
+              
+}
+     @override
+  Widget build(BuildContext context) {
+    // TODO: implement build
+    return ListView.builder(
+   itemBuilder: _buildProductItem,
+   itemCount: products.length,
           );
   }
 
