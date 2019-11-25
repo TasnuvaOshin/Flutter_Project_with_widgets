@@ -1,33 +1,38 @@
- 
- import 'package:flutter/material.dart';
- 
- class Products extends StatelessWidget {
+import 'package:flutter/material.dart';
 
-   final List<String> products;
-   Products(this.products);
+class Products extends StatelessWidget {
+  final List<String> products;
+  Products(this.products);
 
-
-Widget  _buildProductItem(BuildContext context,int index){
-        return Card(
-                    child: Column(
-                      children: <Widget>[
-                        Image.asset('assets/img.jpg'),
-                        Text(products[index])
-                      ],
-                    ),
-                  );
-              
-}
-     @override
-  Widget build(BuildContext context) {
-    // TODO: implement build
-    return products.length > 0 ? ListView.builder(
-   itemBuilder: _buildProductItem,
-   itemCount: products.length,
-          ) : Center(child: Text(
-          'No Products Found '
-          ),) ;
+  Widget _buildProductItem(BuildContext context, int index) {
+    return Card(
+      child: Column(
+        children: <Widget>[
+          Image.asset('assets/img.jpg'),
+          Text(products[index])
+        ],
+      ),
+    );
   }
 
- }
- 
+
+Widget _buildProductLists(){
+  Widget productCart = Center(
+      child: Text('No Products Found '),
+    );
+
+    if (products.length > 0) {
+      productCart = ListView.builder(
+        itemBuilder: _buildProductItem,
+        itemCount: products.length,
+      );
+    }
+    return productCart;
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
+  return _buildProductLists();
+}
+}
