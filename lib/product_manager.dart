@@ -1,7 +1,8 @@
- import 'package:flutter/material.dart';
+
+
+import 'package:flutter/material.dart';
 
  import './products.dart';
-
  import './product_control.dart';
 
 
@@ -12,8 +13,10 @@ class  ProdcutManager extends StatefulWidget {
     ProdcutManager(this.startingProduct);
 
 
+ 
 
-
+  
+       
 
 
   @override
