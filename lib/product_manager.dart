@@ -30,7 +30,7 @@ class _State extends State<ProdcutManager> {
        @override
   void initState() {
 
-    _products.add(widget.startingProduct);
+    // _products.add(widget.startingProduct);
     super.initState();
 
   }
