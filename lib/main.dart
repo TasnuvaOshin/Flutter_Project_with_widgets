@@ -8,13 +8,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+
+      theme: ThemeData(
+        primarySwatch: Colors.deepOrange,
+      ),
       home: Scaffold(
       appBar: AppBar(
         title: Text('My App'),
       ),
 
 //this is for new feature
-body: ProdcutManager(),
+body: ProdcutManager('Food Taster one'),
       ),
 
       
