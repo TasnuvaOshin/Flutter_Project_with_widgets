@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ProductPage extends StatelessWidget {
   final String title;
   final String imageUrl;
-  ProductPage(this.title,this.imageUrl);
+  ProductPage(this.title, this.imageUrl);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,16 +19,13 @@ class ProductPage extends StatelessWidget {
                 child: Text('Details'),
               ),
               Container(
-
                 padding: EdgeInsets.all(2.0),
-                child:  RaisedButton(
+                child: RaisedButton(
                   color: Colors.green,
-                child: Text('Back'),
-                onPressed: () => Navigator.pop(context),
-              ),
-
+                  child: Text('Delete'),
+                  onPressed: () => Navigator.pop(context, true),
+                ),
               )
-             
             ],
           ),
         )

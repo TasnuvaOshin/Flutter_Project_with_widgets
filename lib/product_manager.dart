@@ -21,9 +21,15 @@ class _State extends State<ProdcutManager> {
     super.initState();
   }
 
-  void _addProduct(Map<String,dynamic> product) {
+  void _addProduct(Map<String, dynamic> product) {
     setState(() {
       _products.add(product);
+    });
+  }
+
+  void _deleteProduct(int index) {
+    setState(() {
+      _products.removeAt(index);
     });
   }
 
@@ -33,7 +39,7 @@ class _State extends State<ProdcutManager> {
       children: <Widget>[
         Container(
             margin: EdgeInsets.all(15.0), child: ProductControl(_addProduct)),
-        Expanded(child: Products(_products))
+        Expanded(child: Products(_products, _deleteProduct))
       ],
     );
   }
