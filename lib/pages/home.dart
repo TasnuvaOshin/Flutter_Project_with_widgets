@@ -11,7 +11,13 @@ class HomePage extends StatelessWidget {
       ),
 
 //this is for new feature
-      body: ProdcutManager('Food Taster one'),
+      body: ProdcutManager({'title': 'chocolate', 'image': 'assets/img.jpg'}),
     );
   }
 }
+
+/* 
+
+asas
+asas
+ */

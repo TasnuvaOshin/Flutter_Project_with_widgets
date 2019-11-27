@@ -4,7 +4,7 @@ import './products.dart';
 import './product_control.dart';
 
 class ProdcutManager extends StatefulWidget {
-  final String startingProduct;
+  final Map startingProduct;
 
   ProdcutManager(this.startingProduct);
 
@@ -13,7 +13,7 @@ class ProdcutManager extends StatefulWidget {
 }
 
 class _State extends State<ProdcutManager> {
-  List<String> _products = [];
+  List<Map> _products = [];
 
   @override
   void initState() {
@@ -21,7 +21,7 @@ class _State extends State<ProdcutManager> {
     super.initState();
   }
 
-  void _addProduct(String product) {
+  void _addProduct(Map<String,dynamic> product) {
     setState(() {
       _products.add(product);
     });
