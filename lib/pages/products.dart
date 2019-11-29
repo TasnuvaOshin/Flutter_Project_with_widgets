@@ -4,6 +4,7 @@ import '../product_manager.dart';
 import 'package:flutter_dart/pages/manageproduct.dart';
 import 'package:flutter_dart/pages/product_create.dart';
 import 'package:flutter_dart/pages/product_list.dart';
+
 class ProductsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -20,22 +21,18 @@ class ProductsPage extends StatelessWidget {
               ListTile(
                 title: Text('All Product'),
                 onTap: () {
-                  Navigator.push(
+                  Navigator.pushNamed(
                     context,
-                    MaterialPageRoute(
-                      builder: (context) => manageProduct(),
-                    ),
+                    '/manageproduct',
                   );
                 },
               ),
               ListTile(
                 title: Text('Manage Product'),
                 onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => manageProduct(),
-                    ),
+                  Navigator.pushNamed(
+                    context, '/manageproduct', //we use route for this
+                    // checkout the main.dart for route
                   );
                 },
               )
@@ -60,16 +57,14 @@ class ProductsPage extends StatelessWidget {
         ),
 
 //this is for new feature
-     //  body: ProdcutManager({'title': 'chocolate', 'image': 'assets/img.jpg'}),
-      
-      body: TabBarView(
+        //  body: ProdcutManager({'title': 'chocolate', 'image': 'assets/img.jpg'}),
 
-        children: <Widget>[
-         productCreatePage(),
-         productListPage(),
-
-        ],
-      ),
+        body: TabBarView(
+          children: <Widget>[
+            productCreatePage(),
+            productListPage(),
+          ],
+        ),
       ),
     );
   }
